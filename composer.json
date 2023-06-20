@@ -1,9 +1,7 @@
 {
     "name": "eurostep/storage-adapter",
     "require": {
-        "php": "^7.3|^8.0",
-        "illuminate/support": "^7.0|^8.0|^9.0",
-        "illuminate/filesystem": "^7.0|^8.0|^9.0"
+        "php": "^7.3|^8.0"
     },
     "autoload": {
         "psr-4": {
