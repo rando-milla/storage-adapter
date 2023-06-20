@@ -1,0 +1,36 @@
+{
+    "name": "eurostep/storage-adapter",
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^7.0|^8.0|^9.0",
+        "illuminate/filesystem": "^7.0|^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eurostep\\StorageAdapter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rando Milla",
+            "email": "millarando91@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eurostep\\StorageAdapter\\Providers\\EurostepStorageServiceProvider"
+            ],
+            "psr-4": {
+                "App\\": "app/",
+                "Application1\\": "app/Application1",
+                "Application2\\": "app/Application2",
+                "Application1\\Subapp1\\": "app/Application1/Subapp1",
+                "Application1\\Subapp2\\": "app/Application1/Subapp2",
+                "Application2\\Subapp1\\": "app/Application2/Subapp1",
+                "Application2\\Subapp2\\": "app/Application2/Subapp2"
+            }
+        }
+    }
+
+}
