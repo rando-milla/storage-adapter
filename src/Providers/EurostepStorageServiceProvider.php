@@ -24,7 +24,7 @@ class EurostepStorageServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/eurostep_storage.php',
+            __DIR__ . "/../../config/{$this->getApplicationName()}/eurostep_storage.php",
             'eurostep_storage'
         );
     }
@@ -32,7 +32,14 @@ class EurostepStorageServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../config/eurostep_storage.php' => config_path('eurostep_storage.php'),
+            __DIR__ . "/../../config/{$this->getApplicationName()}/eurostep_storage.php" => config_path("{$this->getApplicationName()}/eurostep_storage.php"),
+        ], 'config');
+    }
+
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . "/../../config/{$this->getApplicationName()}/eurostep_storage.php" => config_path("{$this->getApplicationName()}/eurostep_storage.php"),
         ], 'config');
 
         if ($this->app->runningInConsole()) {
