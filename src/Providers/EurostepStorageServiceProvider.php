@@ -46,7 +46,7 @@ class EurostepStorageServiceProvider extends ServiceProvider
 
     protected function getApplicationName()
     {
-        $appName = App::getName();
+        $appName = env('APP_NAME');;
 
         if (isset($this->appNamespaces[$appName])) {
             return $this->appNamespaces[$appName];
