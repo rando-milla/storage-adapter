@@ -34,13 +34,6 @@ class EurostepStorageServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . "/../../config/{$this->getApplicationName()}/eurostep_storage.php" => config_path("{$this->getApplicationName()}/eurostep_storage.php"),
         ], 'config');
-    }
-
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__ . "/../../config/{$this->getApplicationName()}/eurostep_storage.php" => config_path("{$this->getApplicationName()}/eurostep_storage.php"),
-        ], 'config');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
