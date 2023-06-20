@@ -4,7 +4,6 @@ namespace Eurostep\StorageAdapter;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Filesystem\FilesystemAdapter;
-use Illuminate\Support\ServiceProvider;
 
 class EurostepStorageAdapter
 {
@@ -24,13 +23,14 @@ class EurostepStorageAdapter
 
     protected function publishServiceProvider()
     {
-        $serviceProvider = app_path('Providers/EurostepStorageServiceProvider.php');
+        $serviceProvider = app_path("Providers/{$this->adapterName}/EurostepStorageServiceProvider.php");
         $this->publishFile(__DIR__.'/../stubs/EurostepStorageServiceProvider.stub', $serviceProvider);
     }
 
     protected function publishConfiguration()
     {
-        $configuration = config_path('eurostep_storage.php');
+        $configuration = config_path("{$this->adapterName}/eurostep_storage.php");
+
         $this->publishFile(__DIR__.'/../stubs/eurostep_storage.stub', $configuration);
     }
 
